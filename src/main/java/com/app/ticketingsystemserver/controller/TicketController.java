@@ -10,6 +10,7 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/tickets")
+@CrossOrigin(origins = "http://localhost:3000")
 @AllArgsConstructor
 public class TicketController {
     @Autowired

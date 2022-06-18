@@ -57,7 +57,7 @@ public class TicketService {
             }
         }
 
-        mongoTemplate.save(ticket);
+        mongoTemplate.save(ticket.get());
     }
 
     public void deleteTicket(String ticketId) {

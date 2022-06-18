@@ -10,13 +10,11 @@ import java.util.List;
 
 @RestController
 @RequestMapping("api/v1/tickets")
-@CrossOrigin(origins = "http://localhost:3000")
+@CrossOrigin(origins = "*")
 @AllArgsConstructor
 public class TicketController {
     @Autowired
     private final TicketService ticketService;
-
-    //Inject pendency in constructor and remove @Autowired
 
     @ResponseStatus(HttpStatus.CREATED)
     @PostMapping

@@ -1,7 +1,6 @@
 package com.app.ticketingsystemserver.service;
 
 import com.app.ticketingsystemserver.model.User;
-import com.app.ticketingsystemserver.repository.TicketRepository;
 import com.app.ticketingsystemserver.repository.UserRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
@@ -12,9 +11,6 @@ import java.util.Optional;
 public class UserService {
     @Autowired
     private UserRepository userRepository;
-
-    @Autowired
-    private TicketRepository ticketRepository;
 
     public User createNewUser(User newUser) {
         User persistedUser = new User(newUser.getFirstName(),
@@ -33,7 +29,6 @@ public class UserService {
     }
 
     public void deleteUser(String userId) {
-        //Find tickets with user and update before deleting user
         userRepository.deleteById(userId);
     }
 }
